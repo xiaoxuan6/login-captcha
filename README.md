@@ -1,6 +1,6 @@
 laravel-admin login-captch
 ======
-##注：没有引入captcha请执行
+注：没有引入captcha请执行
 
     composer require mews/captcha
 
@@ -16,12 +16,12 @@ laravel-admin login-captch
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ]
 
-##Installation
+Installation
 First, install dependencies:
 
- `composer require James/login-captcha`
+    composer require James/login-captcha
  
-##Configuration
+Configuration
  In the extensions section of the config/admin.php file, add some configuration that belongs to this extension.
  
      'extensions' => [
