@@ -1,5 +1,5 @@
 {
-    "name": "James/login-captcha",
+    "name": "james/login-captcha",
     "description": "登录验证码",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "login-captcha"],
