@@ -1,21 +1,5 @@
 laravel-admin login-captch
 ======
-注：没有引入captcha请执行
-
-    composer require mews/captcha
-
-修改config/app.php
-    
-    'providers' => [
-        // ...
-        Mews\Captcha\CaptchaServiceProvider::class,
-    ]   
-
-     'aliases' => [
-        // ...
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
-    ]
-
 Installation
 First, install dependencies:
 
