@@ -3,7 +3,7 @@
     "description": "laravel-admin 登录验证码",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "login-captcha"],
-    "homepage": "https://github.com/laravel-admin-ext/login-captcha",
+    "homepage": "https://github.com/xiaoxuan6/login-captcha",
     "license": "MIT",
     "authors": [
         {
