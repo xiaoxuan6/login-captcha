@@ -19,13 +19,6 @@ class JamesServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'login-captcha');
         }
 
-        if ($this->app->runningInConsole() && $assets = $extension->assets()) {
-            $this->publishes(
-                [$assets => public_path('vendor/laravel-admin-ext/login-captcha')],
-                'login-captcha'
-            );
-        }
-
         $this->app->booted(function () {
             James::routes(__DIR__.'/../routes/web.php');
         });
