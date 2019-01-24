@@ -19,6 +19,10 @@ class JamesServiceProvider extends ServiceProvider
             $this->loadViewsFrom($views, 'login-captcha');
         }
 
+        $this->publishes([
+            __DIR__.'/../resources/lang/zh-CN/validation.php' => resource_path('lang/zh-CN/validation.php'),
+        ], 'lang');
+
         $this->app->booted(function () {
             James::routes(__DIR__.'/../routes/web.php');
         });

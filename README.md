@@ -14,3 +14,10 @@ Configuration
              'enable' => true,
          ]
      ]
+     
+### 修改中文
+
+    1、php artisan vendor:publish --tag=lang
+    2、在config/admin.php 中添加 'background' => true,
+
+    
