@@ -16,3 +16,8 @@ Configuration
      ]
  
  
+ ## 背景设置透明
+ 在config/admin.php中添加，默认为false
+ 
+    background = true
+ 

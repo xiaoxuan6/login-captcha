@@ -23,7 +23,7 @@
     <![endif]-->
 </head>
 <body class="hold-transition login-page" @if(config('admin.login_background_image'))style="background: url({{config('admin.login_background_image')}}) no-repeat;background-size: cover;"@endif>
-<div class="login-box">
+<div class="login-box" style="{{ isset(config('admin.background')) && config('admin.background') ? 'background:rgba(255,255,255,0)' : '' }}">
     <div class="login-logo">
         <a href="{{ admin_base_path('/') }}"><b>{{config('admin.name')}}</b></a>
     </div>
@@ -40,7 +40,7 @@
                     @endforeach
                 @endif
 
-                <input type="input" class="form-control" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
+                <input type="input" class="form-control" style="{{ isset(config('admin.background')) && config('admin.background') ? 'background-color:transparent' : '' }}" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
 
-                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('username') }}">
+                <input type="password" class="form-control" style="{{ isset(config('admin.background')) && config('admin.background') ? 'background-color:transparent' : '' }}" placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -63,7 +63,7 @@
                         @endforeach
                     @endif
 
-                    <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px; "  placeholder="{{ trans('admin.captcha') }}" name="captcha">
+                    <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px; {{ isset(config('admin.background')) && config('admin.background') ? 'background-color:transparent' : '' }}"  placeholder="{{ trans('admin.captcha') }}" name="captcha">
                     <span class="glyphicon glyphicon-refresh form-control-feedback captcha" style="right:39%;z-index: 100"></span>
                     <img  class="captcha" src="{{ captcha_src('admin') }}" onclick="refresh()">
                 </div>
