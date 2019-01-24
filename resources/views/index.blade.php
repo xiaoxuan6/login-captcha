@@ -28,7 +28,7 @@
         <a href="{{ admin_base_path('/') }}"><b>{{config('admin.name')}}</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="login-box-body" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif>
         <p class="login-box-msg">{{ trans('admin.login') }} </p>
 
         <form action="{{ admin_base_path('auth/login') }}" method="post">
@@ -40,7 +40,7 @@
                     @endforeach
                 @endif
 
-                <input type="input" class="form-control" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
+                <input type="input" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
 
-                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('username') }}">
+                <input type="password" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -63,7 +63,7 @@
                         @endforeach
                     @endif
 
-                    <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px;"  placeholder="{{ trans('admin.captcha') }}" name="captcha">
+                    <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px; @if(config('admin.background')) background:rgba(255,255,255,0);@endif"  placeholder="{{ trans('admin.captcha') }}" name="captcha">
                     <span class="glyphicon glyphicon-refresh form-control-feedback captcha" style="right:39%;z-index: 100"></span>
                     <img  class="captcha" src="{{ captcha_src('admin') }}" onclick="refresh()">
                 </div>
