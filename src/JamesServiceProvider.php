@@ -21,6 +21,7 @@ class JamesServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../resources/lang/zh-CN/validation.php' => resource_path('lang/zh-CN/validation.php'),
+            __DIR__.'/../resources/lang/zh-CN/auth.php' => resource_path('lang/zh-CN/auth.php'),
         ], 'lang');
 
         $this->app->booted(function () {
