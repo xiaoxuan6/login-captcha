@@ -17,7 +17,12 @@ Configuration
      
 ### 修改中文
 
-    1、php artisan vendor:publish --tag=lang
-    2、在config/admin.php 中添加 'background' => true,
+    php artisan vendor:publish --tag=lang
+    
+### 输入框背景透明化
+
+在config/admin.php 中添加 
+
+	'background' => true,
 
     
