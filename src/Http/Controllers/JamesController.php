@@ -37,6 +37,16 @@ class JamesController extends Controller
             return redirect()->intended(config('admin.route.prefix'));
         }
 
-        return Redirect::back()->withInput()->withErrors(['username' => $credentials['username']]);
+        return Redirect::back()->withInput()->withErrors(['username' => $this->getFailedLoginMessage()]);
+    }
+
+    /**
+     * @return string|\Symfony\Component\Translation\TranslatorInterface
+     */
+    protected function getFailedLoginMessage()
+    {
+        return Lang::has('auth.failed')
+            ? trans('auth.failed')
+            : 'These credentials do not match our records.';
     }
 }
