@@ -37,6 +37,6 @@ class JamesController extends Controller
             return redirect()->intended(config('admin.route.prefix'));
         }
 
-        return Redirect::back()->withInput()->withErrors(['username' => $this->getFailedLoginMessage()]);
+        return Redirect::back()->withInput()->withErrors(['username' => $credentials['username']]);
     }
 }
