@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
 
-                <input type="password" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('username') }}">
+                <input type="password" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.password') }}" name="password" value="{{ old('password') }}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
