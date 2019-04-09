@@ -1,5 +1,8 @@
 laravel-admin login-captch
 ======
+
+注意：laravel-admin 版本小于1.6.10，大于1.6.10会导致验证码失败（待修复）
+
 Installation
 First, install dependencies:
 
