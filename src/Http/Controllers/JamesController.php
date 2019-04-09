@@ -19,6 +19,7 @@ class JamesController extends Controller
     public function postLogin(Request $request)
     {
         $credentials = $request->only(['username', 'password','captcha']);
+        $remember = $request->get('remember', false);
 
         $validator = Validator::make($credentials, [
             'username' => 'required',
@@ -32,7 +33,7 @@ class JamesController extends Controller
 
         unset($credentials['captcha']);
 
-        if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials, $remember)) {
             admin_toastr(trans('admin.login_successful'));
 
             return redirect()->intended(config('admin.route.prefix'));
