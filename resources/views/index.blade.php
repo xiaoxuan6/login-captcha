@@ -28,7 +28,7 @@
         <a href="{{ admin_base_path('/') }}"><b>{{config('admin.name')}}</b></a>
     </div>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="login-box-body" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif>
         <p class="login-box-msg">{{ trans('admin.login') }}</p>
 
         <form action="{{ admin_base_path('auth/login') }}" method="post">
@@ -40,7 +40,7 @@
                     @endforeach
                 @endif
 
-                <input type="text" class="form-control" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
+                <input type="text" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
@@ -51,7 +51,7 @@
                     @endforeach
                 @endif
 
-                <input type="password" class="form-control" placeholder="{{ trans('admin.password') }}" name="password">
+                <input type="password" class="form-control" @if(config('admin.background')) style="background:rgba(255,255,255,0);"@endif placeholder="{{ trans('admin.password') }}" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
