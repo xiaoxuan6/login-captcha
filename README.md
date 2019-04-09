@@ -35,7 +35,11 @@ Configuration
 	  </tr>
 	  <tr>
 	    <td>^1.7.1</td>
-	    <td>^1.8</td>
+	    <td>< 1.6.10</td>
 	  </tr>
+	  <tr>
+        <td>^1.8</td>
+        <td>>= 1.6.10</td>
+      </tr>
 	</table>
 </div> 
