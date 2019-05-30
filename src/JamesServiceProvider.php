@@ -11,6 +11,10 @@ class JamesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (!config('admin.extensions.login-captcha.enable', 'true')) {
+            return;
+        }
+        
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'login-captcha');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'login-captcha');
 
