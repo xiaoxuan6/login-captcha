@@ -38,8 +38,12 @@ Configuration
 	    <td>< 1.6.10</td>
 	  </tr>
 	  <tr>
-        <td>^1.8</td>
-        <td>>= 1.6.10</td>
-      </tr>
+            <td>^1.8</td>
+            <td>1.6.10 <= 1.7</td>
+          </tr>
+	  <tr>
+            <td>^2.0</td>
+            <td>>= 1.7</td>
+          </tr>
 	</table>
 </div> 
