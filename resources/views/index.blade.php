@@ -63,9 +63,10 @@
                         @endforeach
                     @endif
 
-                    <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px; @if(config('admin.background')) background:rgba(255,255,255,0);@endif"  placeholder="{{ trans('admin.captcha') }}" name="captcha">
-                    <span class="glyphicon glyphicon-refresh form-control-feedback captcha" style="right:39%;z-index: 100"></span>
+                    <input type="text" class="form-control" style="display: inline;width: 35%; margin-left: 17px; @if(config('admin.background')) background:rgba(255,255,255,0);@endif"  placeholder="{{ trans('admin.captcha') }}" name="captcha">
+                    <div class="glyphicon form-control-feedback captcha"></div>
                     <img  class="captcha" src="{{ captcha_src('admin') }}" onclick="refresh()">
+                    <div class="glyphicon refresh" style="width: 65px; text-align: center">换一张</div>
                 </div>
                 <script>
                     function refresh(){
@@ -112,6 +113,10 @@
             increaseArea: '20%' // optional
         });
     });
+
+    $('.refresh').click(function () {
+        $('img[class="captcha"]').attr('src','{{ captcha_src('admin') }}'+Math.random());
+    })
 </script>
 </body>
 </html>
